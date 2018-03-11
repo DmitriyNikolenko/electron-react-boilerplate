@@ -1,7 +1,8 @@
-.DS_Store
-npm-debug.log
-
-.cache/
-dist/
-build/
+# Node modules
 node_modules/
+
+# Parcel's cache
+.cache/
+
+# Yarn's logs
+yarn-error.log

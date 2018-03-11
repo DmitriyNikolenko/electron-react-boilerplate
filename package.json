@@ -1,5 +1,5 @@
 {
-	"name": "parcel-reactjs-electron",
+	"name": "electron-react-boilerplate",
 	"version": "1.0.0",
 	"description": "A minimal React.js boilerplate with parcel as bundler",
 	"main": "main.js",
