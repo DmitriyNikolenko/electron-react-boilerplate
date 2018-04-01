@@ -1,42 +1,74 @@
 {
 	"name": "electron-react-boilerplate",
-	"version": "1.0.0",
-	"description": "A minimal React.js boilerplate with parcel as bundler",
+	"version": "1.1.0",
+	"description": "A minimal Cerebral and React.js boilerplate with parcel as bundler",
 	"main": "main.js",
 	"scripts": {
 		"start": "yarn parcel && yarn electron",
-		"parcel": "parcel build ./src/index.html -d build/ --target=electron --public-url ./",
+		"parcel": "parcel build ./src/index.html -d build/ --public-url ./",
+		"dev": "parcel ./src/index.html -d build/ --public-url ./",
 		"electron": "electron .",
 		"pack": "yarn parcel && yarn build",
 		"build": "electron-builder",
-		"dev": "parcel ./src/index.html -d build/",
-		"postinstall": "electron-builder install-app-deps"
+		"postinstall": "electron-builder install-app-deps",
+		"gendocs": "node_modules/.bin/esdoc"
 	},
 	"build": {
-		"appId": "parcel.reactjs.electron",
-		"mac": {
-			"category": "your.app.category.type"
+		"appId": "com.author.applicationName",
+		"productName": "ApplicationName",
+		"copyright": "© 2018, Developer",
+		"asar": true,
+		"linux": {
+			"icon": "build/icons/",
+			"maintainer": "developer",
+			"synopsis": "Application",
+			"category": "Development",
+			"packageCategory": "devel",
+			"description": "Electron based application.",
+			"target": [
+				"AppImage"
+			]
 		},
-		"files": [
-			"main.js",
-			"build/*"
-		]
+		"win": {
+			"icon": "build/icons/icon.png.ico",
+			"publisherName": "developer",
+			"target": [
+				"nsis"
+			]
+		},
+		"nsis": {
+			"oneClick": true,
+			"perMachine": true,
+			"installerIcon": "build/icons/icon.png.ico",
+			"createDesktopShortcut": true
+		},
+		"mac": {
+			"icon": "build/icons/icon.png.icns",
+			"category": "public.app-category.applicationName",
+			"target": [
+				"zip",
+				"dmg"
+			]
+		}
 	},
 	"license": "MIT",
 	"dependencies": {
-		"react": "^16.2.0",
-		"react-dom": "^16.2.0"
+		"react": "^16.3.0",
+		"react-dom": "^16.3.0"
 	},
 	"devDependencies": {
-		"babel-eslint": "*",
-		"babel-preset-env": "*",
-		"babel-preset-react": "*",
+		"babel-eslint": "^8.2.2",
+		"babel-plugin-transform-object-rest-spread": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
+		"babel-preset-react": "^6.24.1",
 		"electron": "^1.7.8",
-		"electron-builder": "*",
-		"electron-reload": "*",
-		"eslint": "*",
-		"eslint-plugin-jsx": "*",
-		"eslint-plugin-react": "*",
-		"parcel-bundler": "*"
+		"electron-builder": "^20.8.1",
+		"esdoc-ecmascript-proposal-plugin": "^1.0.0",
+		"esdoc-jsx-plugin": "^1.0.0",
+		"esdoc-standard-plugin": "^1.0.0",
+		"eslint": "^4.19.1",
+		"eslint-plugin-jsx": "^0.0.2",
+		"eslint-plugin-react": "^7.7.0",
+		"parcel-bundler": "^1.7.0"
 	}
 }

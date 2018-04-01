@@ -30,14 +30,7 @@
 		"react", "jsx"
 	  ],
     "rules": {
-//		"curly": 2,                      // specify curly brace conventions for all control statements
-//		"eqeqeq": 1,                     // require the use of === and !==
-//		"no-extend-native": 0,           // disallow adding to native types
-//		"lines-between-class-members": ["warn", "always"],
-//		"multiline-comment-style": ["warn", "bare-block"],
-
-
-		///// Разрешено /////
+		/* 		Active rules	*/
 
 		// This rule aims to enforce consistent spacing before function parentheses and as such, will warn whenever whitespace doesn’t match the preferences specified.
 		"space-before-function-paren": ["warn", {"anonymous": "always", "named": "never", "asyncArrow": "always"}],
@@ -282,7 +275,7 @@
 		"no-iterator": "error",                
 
 		// disallow unnecessary nested blocks
-		"no-lone-blocks": 1,                         
+		"no-lone-blocks": "warn",                         
 
 		// disallow reassignments of native objects
 		"no-native-reassign": "error",        
@@ -330,31 +323,31 @@
 		"yoda": "error", 
 		
 		// disallow deletion of variables
-		"no-delete-var": 2,
+		"no-delete-var": "error",
 		
 		// disallow labels that share a name with a variable
-		"no-label-var": 2,        
+		"no-label-var": "error",        
 		
 		// disallow declaration of variables already declared in the outer scope
-		"no-shadow": 1,                  
+		"no-shadow": "warn",                  
 
 		// disallow shadowing of names such as arguments
-		"no-shadow-restricted-names": 2, 
+		"no-shadow-restricted-names": "error", 
 
 		// disallow use of undeclared variables unless mentioned in a /*global */ block.
-		"no-undef": 2,   
+		"no-undef": "error",   
 
 		// disallow declaration of variables that are not used in the code
 		"no-unused-vars": ["error", {"vars": "all", "args": "after-used"}],
 
 		// enforces error handling in callbacks (off by default) (on by default in the node environment)
-		"handle-callback-err": 1,   
+		"handle-callback-err": "warn",   
 	
 		// disallow use of new operator with the require function (off by default) (on by default in the node environment)
-		"no-new-require": 2,            
+		"no-new-require": "error",            
 		
 		// disallow string concatenation with __dirname and __filename (off by default) (on by default in the node environment)
-		"no-path-concat": 2,    
+		"no-path-concat": "error",    
 	
 		"key-spacing": ["warn", { 
 			"multiLine": {
@@ -388,27 +381,27 @@
 		"new-parens": "error",     
 		
         // disallow use of the Array constructor
-		"no-array-constructor": 2,       
+		"no-array-constructor": "error",       
 
 		// disallow if as the only statement in an else block (off by default)
 		"no-lonely-if": "warn",               
 
 		
 		// disallow space between function identifier and application
-		"no-spaced-func": 1,      
+		"no-spaced-func": "warn",      
 		
 		// disallow trailing whitespace at the end of lines
 		"no-trailing-spaces": "warn", 
 		
 		// disallow dangling underscores in identifiers
-		"no-underscore-dangle": 1,     
+		"no-underscore-dangle": "warn",     
 		
         // disallow mixed spaces and tabs for indentation
-		"no-mixed-spaces-and-tabs": 1,  
+		"no-mixed-spaces-and-tabs": "warn",  
  
 		
 		// require a space after certain keywords (off by default) 
-//		"space-after-keywords": 1,         
+//		"space-after-keywords": "warn",         
 
 
 		"object-curly-spacing": ["warn", "always"],
@@ -419,17 +412,17 @@
 //		"space-in-parens": ["warn", "never"],            
 
 		// require spaces around operators
-		"space-infix-ops": 1,            
+		"space-infix-ops": "warn",            
 
 		// require a space after return, throw, and case
-//		"space-return-throw-case": 1,    
+//		"space-return-throw-case": "warn",    
 
 
 		// require or disallow spaces before/after unary operators (words on by default, nonwords off by default)
 		"space-unary-ops": [1, { "words": true, "nonwords": false }], 
 
 		// specify the maximum depth callbacks can be nested (off by default)
-		"max-nested-callbacks": 2,       
+		"max-nested-callbacks": "error",       
 
 		// require immediate function invocation to be wrapped in parentheses (off by default)
 		"wrap-iife": ["error", "inside"], 
@@ -441,10 +434,7 @@
 
 
 
-		///// Игнор /////
-		// This rule aims to enforce a consistent style of comments across your codebase, specifically by either requiring or disallowing a capitalized letter as the first word character in a comment. This rule will not issue warnings when non-cased letters are used.
-//		"capitalized-comments": ["warn", "always", { "ignoreInlineComments": true, "ignorePattern": "pragma|ignore|TODO|FIX ME" } ],		
-
+		/* 		Inactive rules		*/
 		 
 		// disallow use of variables before they are defined
 		"no-use-before-define": "off", 
@@ -522,7 +512,7 @@
 		// disallow use of octal literals
 		"no-octal": 0,                   
 
-			// disallow usage of configurable warning terms in comments": 1,
+			// disallow usage of configurable warning terms in comments": "warn",
 		"no-warning-comments": 0,       
 
 		// require a space after a semi-colon
@@ -594,22 +584,22 @@
 		// specify the maximum number of statement allowed in a function (off by default)
 		"max-statements": 0,             
 		// disallow use of bitwise operators (off by default)
-		"no-bitwise": 1,                 
+		"no-bitwise": "warn",                 
 		// disallow use of unary operators, ++ and -- (off by default)
 		"no-plusplus": 0,
 
-
+		// React and JSX plugins rules.
 		"react/display-name": 0,
 		"react/jsx-boolean-value": 0,
 		"jsx-quotes": [1, "prefer-double"],
 		"react/jsx-sort-props": 0,
-		"react/jsx-uses-react": 1,
-		"react/jsx-uses-vars": 1,
+		"react/jsx-uses-react": "warn",
+		"react/jsx-uses-vars": "warn",
 		"react/no-multi-comp": 0,
 		"react/no-unknown-property": 0,
 		"react/prop-types": 0,
 		"react/react-in-jsx-scope": 0,
-		"react/self-closing-comp": 1,
+		"react/self-closing-comp": "warn",
 		"react/wrap-multilines": 0,
 		"react/jsx-no-undef": 2
     }

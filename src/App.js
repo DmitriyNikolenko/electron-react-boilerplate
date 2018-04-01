@@ -1,31 +1,25 @@
 import React from 'react'
-import logo from './logo.svg'
+import ReactDOM from 'react-dom'
+import logo from './images/logo.svg'
 import './App.css'
 
 
-export default class App extends React.Component {
-	// render = () => (
-	// 	<div className="App">
-	// 	<header className="App-header">
-	// 		<img src={logo} className="App-logo" alt="logo" />
-	// 		<h1 className="App-title">Welcome to React</h1>
-	// 	</header>
-	// 	<p className="App-intro">
-	// 		To get started, edit <code>src/App.js</code> and save to reload.
-	// 	</p>
-	// 	</div>
-	// )
-	render() {
-		return (
-			<div className="App">
-				<header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
-					<h1 className="App-title">Welcome to React</h1>
-				</header>
-				<p className="App-intro">
+/**	Main application component.
+ * 	@return {React.Component} React application.
+ */
+function App() {
+	return (
+		<div className="App">
+			<header className="App-header">
+				<img src={logo} className="App-logo" alt="logo" />
+				<h1 className="App-title">Welcome to React</h1>
+			</header>
+			<p className="App-intro">
 				To get started, edit <code>src/App.js</code> and save to reload.
-				</p>
-			</div>
-		)
-	}
+			</p>
+		</div>
+	)
 }
+
+
+ReactDOM.render(<App />, document.getElementById('root'))
